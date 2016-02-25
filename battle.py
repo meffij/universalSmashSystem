@@ -138,7 +138,6 @@ class Battle():
                     pygame.time.set_timer(pygame.USEREVENT+2, 1000)
                     clockSprite.changeText(str(clockTime / 60)+':'+str(clockTime % 60).zfill(2))
                     clockTime -= 1
-                    print(clockTime)
                     if clockTime <= 5 and clockTime > 0:
                         countdownSprite.changeText(str(clockTime))
                         countAlpha = 255
@@ -196,7 +195,7 @@ class Battle():
             # End object updates
             
             current_stage.drawFG(screen)    
-            clock.tick(60)  
+            clock.tick(60)
             pygame.display.flip()
         # End while loop
         
