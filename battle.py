@@ -106,6 +106,8 @@ class Battle():
         dataLog = DataLog();
         dataLog.addSection('test', 1)
         dataLog.setData('test', 3, (lambda x,y: x + y))
+        
+        # Main engine loop
         while exitStatus == 0:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
