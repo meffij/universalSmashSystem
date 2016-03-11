@@ -16,11 +16,11 @@ print j.get_id()
 
 j.init()
 
-print j.get_init()
-print j.get_id()
-print j.get_numaxes()
-a = [set() for axis in range(j.get_numaxes())]
-print j.get_numbuttons()
+# print j.get_init()
+# print j.get_id()
+# print j.get_numaxes()
+# a = [set() for axis in range(j.get_numaxes())]
+# print j.get_numbuttons()
 # b = [set() for button in range(j.get_numbuttons())]
 
 while True:
@@ -29,12 +29,25 @@ while True:
 		# print len(e)
 	for event in e:
 		if event.type == pygame.JOYBUTTONDOWN:
-			n = event.joy
-			for axis in range(j.get_numaxes()):
-				print len(a[axis]) 
+			# n = event.joy
+			# for axis in range(j.get_numaxes()):
+				# print len(a[axis]) 
 			# for button in range(j.get_numbuttons()):
 				# print j.get_button(button)
-			print '\n'
+			# print '\n'
+
+			print "JOYBUTTONDOWN"
+			print "joy: ", event.joy
+			print "button: ", event.button
 		if event.type == pygame.JOYAXISMOTION:
-			n = event.axis
-			a[n].add(event.value)
+			# n = event.axis
+			# a[n].add(event.value)
+			print "JOYAXISMOTION"
+			print "joy: ", event.joy
+			print "axis: ", event.axis
+			print "value: ", event.value
+
+		if event.type == pygame.JOYBUTTONUP:
+			print "JOYBUTTONUP"
+			print "joy: ", event.joy
+			print "button: ", event.button
